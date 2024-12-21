@@ -22,6 +22,7 @@ again:// Here i am ussing jump statement for play again//
 	printf("\nguess no between 1-100 : ");
 
 	do {
+                count++;
 
 		scanf("%d",&guess);
 
@@ -36,7 +37,7 @@ again:// Here i am ussing jump statement for play again//
 			printf("     you win game in %d attempts\n",count);
 			printf("_______________________________________________\n");
 		}
-		count++;
+		
 	} while(guess!=number);
 
 	char yn;
