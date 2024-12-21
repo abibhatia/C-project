@@ -1,0 +1,64 @@
+
+#include <stdio.h>
+#include<time.h>
+#include<stdlib.h>
+
+int main()
+{
+
+again:// Here i am ussing jump statement for play again//
+
+
+	// genrate a random no btw(1-100)
+	srand(time(NULL));
+	int number=rand()%100 +1;
+	//printf("%d",number);
+
+	printf("________________________________________\n");
+	int guess,count=0;
+	printf("      Welcome to no guessing game\n");
+
+	printf("________________________________________\n");
+	printf("\nguess no between 1-100 : ");
+
+	do {
+
+		scanf("%d",&guess);
+
+		if(guess>number) {
+			printf("\nenter smaller no :");
+		}
+		else if(guess<number) {
+			printf("\nenter greater no : ");
+		}
+		else {
+			printf("________________________________________________\n");
+			printf("     you win game in %d attempts\n",count);
+			printf("_______________________________________________\n");
+		}
+		count++;
+	} while(guess!=number);
+
+	char yn;
+	printf("\nyou want to play again y/n : ");
+	scanf("%s",&yn);
+	if(yn=='y') {
+		// Clear the screen
+#ifdef _WIN32
+		system("cls"); // For Windows
+#else
+		system("clear"); // For Linux/Mac
+#endif
+
+		goto again;
+	}
+	else {
+		printf("\n^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n");
+		printf("    game by ABISHEK BHATIA\n");
+		printf("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+	}
+
+
+
+	return 0;
+}
